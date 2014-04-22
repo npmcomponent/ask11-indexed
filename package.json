@@ -1,49 +1,21 @@
 {
-  "name": "indexed",
-  "version": "0.5.1",
+  "name": "ask11-indexed",
   "description": "High-level wrapper around IndexedDB with fallback to localStorage",
-  "main": "dist/indexed.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:ask11/indexed.git"
-  },
+  "version": "0.5.1",
   "keywords": [
     "IndexedDB",
-    "LevelDB",
-    "browserify"
+    "store",
+    "data",
+    "localStorage",
+    "LevelDB"
   ],
-  "author": "Aleksey Kulikov <alekseys.kulikov@gmail.com> (http://twitter.com/ask_11)",
-  "license": "MIT",
-  "scripts": {
-    "postinstall": "component install",
-    "test": "testem -f test/testem.json ci",
-    "start": "testem -f test/testem.json",
-    "build": "component build",
-    "release": "component build --standalone Indexed && sed -i.bak 's/require/requireIndexed/g' build/build.js && cp ./build/build.js ./dist/indexed.js",
-    "stat": "cloc index.js lib/ --quiet && cloc test/*.js --quiet"
-  },
+  "main": "index.js",
   "dependencies": {
-    "component": "*"
+    "timoxley-next-tick": "git://github.com/npmcomponent/timoxley-next-tick.git",
+    "marcuswestin-store.js": "git://github.com/npmcomponent/marcuswestin-store.js.git",
+    "component-clone": "git://github.com/npmcomponent/component-clone.git",
+    "component-type": "git://github.com/npmcomponent/component-type.git",
+    "component-each": "git://github.com/npmcomponent/component-each.git"
   },
-  "devDependencies": {
-    "testem": "*",
-    "chai": "*",
-    "async": "*"
-  },
-  "testling": {
-    "preprocess": "npm run build",
-    "html": "test/test-runner.html",
-    "browsers": [
-      "ie/6..latest",
-      "firefox/3..5",
-      "firefox/19..nightly",
-      "chrome/4..7",
-      "chrome/25..canary",
-      "opera/10..next",
-      "safari/4..latest",
-      "iphone/6",
-      "ipad/6",
-      "android/4.2"
-    ]
-  }
+  "license": "MIT"
 }
